@@ -328,7 +328,7 @@ def sgd_optimization_mnist(learning_rate=0.13, n_epochs=1000,
     # compute the gradient of cost with respect to theta = (W,b)
     g_W = T.grad(cost=cost, wrt=classifier.W)
     g_b = T.grad(cost=cost, wrt=classifier.b)
-    H= theano.shared(value=numpy.zeros((786,10),dtype=theano.config.floatX),name='H',borrow=True)
+    H= theano.shared(value=numpy.zeros((796,796),dtype=theano.config.floatX),name='H',borrow=True)
 
     hessian = find_hessian_and_gradient(cost, [classifier.W, classifier.b])
     #hessian_W = find_hessian_and_gradient(cost, [classifier.W])
